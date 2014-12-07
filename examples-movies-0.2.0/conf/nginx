@@ -1,0 +1,7 @@
+server {
+       root /var/lib/treode/www;
+       location /db/ {
+             rewrite /db/(.+) /$1 break;
+             proxy_pass http://localhost:7070;
+       }
+}
